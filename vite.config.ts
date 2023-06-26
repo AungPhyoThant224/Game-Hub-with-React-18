@@ -9,10 +9,10 @@ import react from "@vitejs/plugin-react";
 export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
-    server: {
-      host: true,
-      port: 9000,
-      open: true,
-    },
+    // server: {
+    //   host: true,
+    //   port: 9000,
+    //   open: true,
+    // },
   };
 });
