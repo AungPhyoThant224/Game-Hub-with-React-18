@@ -10,23 +10,25 @@ interface Props {
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatform();
-  if (error) return;
+  if (error) return <></>;
   return (
-    <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        {selectedPlatform?.name || "Platforms"}
-      </MenuButton>
-      <MenuList>
-        {data.map((platform) => (
-          <MenuItem
-            onClick={() => onSelectPlatform(platform)}
-            key={platform.id}
-          >
-            {platform.name}
-          </MenuItem>
-        ))}
-      </MenuList>
-    </Menu>
+    <>
+      <Menu>
+        <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+          {selectedPlatform?.name || "Platforms"}
+        </MenuButton>
+        <MenuList>
+          {data.map((platform) => (
+            <MenuItem
+              onClick={() => onSelectPlatform(platform)}
+              key={platform.id}
+            >
+              {platform.name}
+            </MenuItem>
+          ))}
+        </MenuList>
+      </Menu>
+    </>
   );
 };
 
