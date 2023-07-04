@@ -1,4 +1,4 @@
-export interface GameTrailer {
+export default interface GameTrailer {
   id: number;
   name: string;
   preview: string;
