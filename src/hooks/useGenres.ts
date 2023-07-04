@@ -8,7 +8,7 @@ const apiClient = new APIClient<Genre>("/genres");
 const useGenres = () => {
   return useQuery<FetchResponse<Genre>, Error>({
     queryKey: ["genres"],
-    queryFn: apiClient.get,
+    queryFn: apiClient.getAll,
     staleTime: ms("24h"), //24 hours
     initialData: genres,
   });
